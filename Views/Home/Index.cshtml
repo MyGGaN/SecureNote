@@ -1,0 +1,164 @@
+﻿<!-- banner -->
+<section class="hero-area hero-area-lg position-relative">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-6 text-center text-lg-left mb-4 mb-lg-0">
+                <h1 class="text-dark position-relative">SecureNote<span class="watermark">Secure</span></h1>
+                <h1 class="text-dark position-relative">- The leading note app</h1>
+                <p class="text-dark mb-4">
+                    Set your mind free, let SecureNote handle everything important <br /> in your life so you can concentrate on procrastination.
+                </p>
+                <ul class="list-inline">
+                    <li class="list-inline-item mx-1 my-2">
+                        <a href="#signup" class="btn btn-outline-primary">
+                            <i class="text-secondary mr-3 transition"></i>Sign up today!
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div class="col-lg-6">
+                <img src="/images/banner-3.png" class="img-fluid w-80" alt="app-interface" data-aos="fade-left" data-aos-delay="1000">
+            </div>
+        </div>
+    </div>
+    <img src="/images/banner-shape.png" class="img-fluid bg-shape-4" alt="shape">
+</section>
+<!-- banner -->
+<!-- feature -->
+<section class="position-relative">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-3 col-sm-6 mb-4 mb-lg-0" data-aos="fade-right" data-aos-duration="1000" data-aos-delay="00">
+                <div class="card border-0 shadow rounded-xs pt-5">
+                    <div class="card-body">
+                        <i class="fa fa-desktop icon-lg icon-blue icon-bg-blue icon-bg-circle mb-3"></i>
+                        <h4 class="mt-4 mb-3">Exclusive Design</h4>
+                        <p>Totally just ripped of some random website with no regrets</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-sm-6 mb-4 mb-lg-0" data-aos="fade-right" data-aos-duration="1000" data-aos-delay="100">
+                <div class="card border-0 shadow rounded-xs pt-5">
+                    <div class="card-body">
+                        <i class="fa fa-gears icon-lg icon-orange icon-bg-orange icon-bg-circle mb-3"></i>
+                        <h4 class="mt-4 mb-3">Easy Customize</h4>
+                        <p>Fully integrated in all CRMS as long as the CRM uses this website</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-sm-6 mb-4 mb-lg-0" data-aos="fade-right" data-aos-duration="1000" data-aos-delay="200">
+                <div class="card border-0 shadow rounded-xs pt-5">
+                    <div class="card-body">
+                        <i class="fa fa-shield icon-lg icon-purple icon-bg-purple icon-bg-circle mb-3"></i>
+                        <h4 class="mt-4 mb-3">Extreme Security</h4>
+                        <p>Lots of time and love have been put into the security in and around SecureNote</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-sm-6 mb-4 mb-lg-0" data-aos="fade-right" data-aos-duration="1000" data-aos-delay="300">
+                <div class="card border-0 shadow rounded-xs pt-5">
+                    <div class="card-body">
+                        <i class="fa fa-clock-o icon-lg icon-green icon-bg-green icon-bg-circle mb-3"></i>
+                        <h4 class="mt-4 mb-3">24 Hour Service</h4>
+                        <p>No matter when you need help, our support team have Swedish fika when you need them</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <img src="/images/dot-1.png" class="img-fluid feature-bg-shape-1" alt="background-dots">
+    <img src="/images/shape-bg.png" class="img-fluid feature-bg-shape-2" alt="background-shape">
+</section>
+<!-- feature -->
+<!-- integration -->
+<section class="section pb-0">
+    <a id="signup"></a>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 pr-lg-5">
+                <img src="/images/integration-2.png" class="img-fluid" alt="dashboard" data-aos="fade-right">
+            </div>
+            <div class="col-md-6 pl-lg-5">
+                <h2 class="section-title" data-aos="fade-up" data-aos-delay="200">Sign Up and be amazed!</h2>
+                <p class="mb-4" data-aos="fade-up" data-aos-delay="400">
+                    Due to the extreme success of SecureNotes we temporarly only allow signups for important customers. In the unlikely event you are important, please provide the code you were given.
+                </p>
+                <form id="form_register" action="/api/register">
+                    <div class="mb-3">
+                        <label for="SignupUsername" class="form-label">Username</label>
+                        <input type="text" autocomplete="off" class="form-control shadow rounded" name="Username" id="SignupUsername">
+                    </div>
+                    <div class="mb-3">
+                        <label for="SignupPassword" class="form-label">Password</label>
+                        <input type="password" autocomplete="off" class="form-control shadow rounded" id="SignupPassword" name="Password">
+                    </div>
+                    <div class="mb-3">
+                        <label for="SignupCode" class="form-label">Invitation code</label>
+                        <input type="text" autocomplete="off" class="form-control shadow rounded" name="Code" id="SignupCode">
+                    </div>
+                    <input type="submit" class="btn btn-primary" value="Create account" />
+                </form>
+                <div id="form_register_error" class="alert alert-danger" role="alert" style="display: none;"></div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="section overflow-hidden">
+    <a id="login"></a>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 pr-lg-5">
+                <h2 class="section-title" data-aos="fade-up" data-aos-delay="200">Sign in and get to work!</h2>
+                <p data-aos="fade-up" data-aos-delay="300">
+                    If you are one of our beloved customers, here is where you sign in.
+                </p>
+                <form id="form_login" action="/Home/Login" method="post">
+                    <div class="mb-3">
+                        <label for="LoginUsername" class="form-label">Username</label>
+                        <input type="text" autocomplete="off" class="form-control shadow rounded" name="Username" id="LoginUsername">
+                    </div>
+                    <div class="mb-3">
+                        <label for="LoginPassword" class="form-label">Password</label>
+                        <input type="password" autocomplete="off" class="form-control shadow rounded" id="LoginPassword" name="Password">
+                    </div>
+                    <input type="submit" class="btn btn-primary" value="Login" />
+                </form>
+                <!-- <a href="/Home/ForgotPassword">Forgot your password?</a> -->
+
+                @if (ViewBag.LoginError != null)
+                {
+                    <div id="form_register_error" class="alert alert-danger" role="alert">@ViewBag.LoginError</div>
+                }
+            </div>
+            <div class="col-md-6 pl-lg-5">
+                <img src="/images/integration-3.png" class="img-fluid" alt="dashboard" data-aos="fade-left" data-aos-delay="200">
+            </div>
+        </div>
+    </div>
+</section>
+<!-- integration -->
+<!-- counter -->
+<section class="bg-light py-5">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-3 col-sm-6 mb-4 mb-md-0 text-center">
+                <p class="h2 text-dark"><span class="counter" data-count="125">0</span>K+</p>
+                <h6 class="text-dark font-weight-normal">Secure notes per day</h6>
+            </div>
+            <div class="col-md-3 col-sm-6 mb-4 mb-md-0 text-center">
+                <p class="h2 text-dark"><span class="counter" data-count="20">0</span>+</p>
+                <h6 class="text-dark font-weight-normal">Design awards</h6>
+            </div>
+            <div class="col-md-3 col-sm-6 mb-4 mb-md-0 text-center">
+                <p class="h2 text-dark"><span class="counter" data-count="7">0</span>K+</p>
+                <h6 class="text-dark font-weight-normal">Totally satisfied users</h6>
+            </div>
+            <div class="col-md-3 col-sm-6 mb-4 mb-md-0 text-center">
+                <p class="h2 text-dark"><span class="counter" data-count="4">0</span>+</p>
+                <h6 class="text-dark font-weight-normal">Karma gained</h6>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- counter -->

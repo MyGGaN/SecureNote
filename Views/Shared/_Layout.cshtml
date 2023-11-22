@@ -1,0 +1,143 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>SecureNote</title>
+
+    <!-- mobile responsive meta -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <!-- Plugins -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha512-SfTiTlX6kk+qitfevl/7LibUOeJWlt9rbyDn92a1DqWOw9vWG2MFoays0sgObmWazO5BQPiFucnnEAjpAB+/Sw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.min.css" integrity="sha512-b2QcS5SsA8tZodcDtGRELiGv5SaKSk1vDHDaQRda0htPYWZ6046lr3kJ5bAAQdpV2mmA/4v0wQF9MyU6/pDIAg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/venobox/2.0.8/venobox.min.css" integrity="sha512-u1ATB5ntkmdRIjrlQgwr1j/RMWsEfTnBGA19Ca9Iz3dkME6wuxaQ05B/7OacXLd4Su8IucMeRZwL/vUhUoqbUA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="/css/slick.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" integrity="sha512-1cK78a1o+ht2JcaW6g8OXYwqpev9+6GqOkz9xmBN9iUUhIndKtxwILGWYOSibOKjLsEdjyjZvYDq/cZwNeak0w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- Main Stylesheet -->
+    <link rel="stylesheet" href="/css/site.css" asp-append-version="true" />
+
+    <!--Favicon-->
+    <link rel="shortcut icon" href="/images/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="/images/favicon.ico" type="image/x-icon">
+</head>
+
+<body>
+    <!-- nav part start -->
+    <div class="naviagtion naviagtion-white fixed-top transition">
+        <div class="container">
+            <nav class="navbar navbar-expand-lg navbar-light p-0">
+                <a class="navbar-brand p-0" href="/"><img src="/images/logo.png" height="50" alt="SecureNote"></a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navigation"
+                        aria-controls="navigation" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse text-center" id="navigation">
+                    <ul class="navbar-nav mx-auto">
+                        <li class="nav-item">
+                            <a class="nav-link text-dark text-capitalize" href="#">about</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark text-capitalize" href="#">services</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark text-capitalize" href="#">blog</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark text-capitalize" href="#">contact</a>
+                        </li>
+                    </ul>
+                    @if (ViewBag.ShowLogout == true)
+                    {
+                        <a href="/Home/Logout" class="btn btn-primary text-white ml-3">Logout</a>
+                    }
+                    else
+                    {
+                        <a href="#login" class="btn btn-primary text-white ml-3">Sign in</a>
+                    }
+                </div>
+            </nav>
+        </div>
+    </div>
+    <!-- nav part end -->
+
+    @RenderBody()
+
+    <!-- footer part start -->
+    <footer class="bg-secondary pt-lg-5">
+        <section class="section border-bottom border-color">
+            <div class="container">
+                <div class="row justify-content-between">
+                    <div class="col-md-5 mb-4 mb-md-0">
+                        <img src="/images/logo_dark.png" class="mb-4" alt="SecureNote" height="50">
+                        <p class="text-light mb-4">
+                            This very fine company will make everything in its power to keep your notes safe. But if you, however unlikely, find any security issues. Don't hesitate to report those for a heafty reward!
+                        </p>
+                        <ul class="list-inline social-icons">
+                            <li class="list-inline-item"><a href="#" target="_blank"><i class="fa fa-facebook"></i></a></li>
+                            <li class="list-inline-item"><a href="#" target="_blank"><i class="fa fa-twitter"></i></a></li>
+                            <li class="list-inline-item"><a href="#" target="_blank"><i class="fa fa-youtube"></i></a></li>
+                            <li class="list-inline-item"><a href="http://github.com/MyGGaN" target="_blank"><i class="fa fa-github"></i></a></li>
+                        </ul>
+                    </div>
+                    <div class="col-md-3 col-sm-6">
+                        <h4 class="text-white mb-4">Services</h4>
+                        <ul class="list-styled list-hover-underline">
+                            <li class="mb-3 text-light"><a href="#" class="text-light">Company History</a></li>
+                            <li class="mb-3 text-light"><a href="#" class="text-light">About us</a></li>
+                            <li class="mb-3 text-light"><a href="#" class="text-light">Contact us</a></li>
+                            <li class="mb-3 text-light"><a href="#" class="text-light">Services</a></li>
+                            <li class="mb-3 text-light"><a href="#" class="text-light">Privacy Policy</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-lg-3 col-md-4 col-sm-6">
+                        <h4 class="text-white mb-4">Contact Info</h4>
+                        <p class="text-light">123 Little Street</p>
+                        <ul class="list-unstyled">
+                            <li class="mb-3"><a class="text-light" href="tel:+46123456789">+46 123 456 789</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- footer part end -->
+        <!-- copyright part start -->
+        <section class="py-4">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6 text-center text-md-left mb-3 mb-md-0">
+                        <p class="mb-0 text-light">
+                            Copyright &copy;
+                            <script>
+                                var CurrentYear = new Date().getFullYear()
+                                document.write(CurrentYear)
+                            </script>
+                            - <b>SecureNote</b> a CTF game by MyGGaN
+                        </p>
+                    </div>
+                    <div class="col-md-6 text-md-right text-center">
+                        <ul class="list-inline">
+                            <li class="list-inline-item"><a href="#" class="text-light">Terms of Service</a></li>
+                            <li class="list-inline-item">| &nbsp;<a href="#" class="text-light">Privacy Policy</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- copyright part end -->
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.min.js" integrity="sha512-WW8/jxkELe2CAiE4LvQfwm1rajOS8PHasCCx+knHG0gBHt8EXxS6T6tJRTGuDQVnluuAvMxWF4j8SNFDKceLFg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="/js/slick.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/venobox/2.0.8/venobox.min.js" integrity="sha512-RwADmV7VD+jDR+1KL6kzLn6mOXVju0tQ0BnxWgXe2MYgDbeFK+ErI9MZdhX5OshfFqAX/rS5nOdfPetPLj6Nyw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js" integrity="sha512-A7AYk1fGKX6S2SsHywmPkrnzTZHrgiVT7GcQkLGDe2ev0aWb8zejytzS8wjo7PGEXKqJOrjQ4oORtnimIRZBtw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <!-- Main Script -->
+    <script src="/js/site.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--
+https://go.microsoft.com/fwlink/?LinkID=208121.
+-->
+<Project>
+  <PropertyGroup>
+    <_PublishTargetUrl>C:\Generic\tmp\VulnGround\SecureNote\bin\Release\net7.0\publish\</_PublishTargetUrl>
+    <History>True|2023-11-22T21:07:09.4842076Z;True|2023-11-22T07:37:02.5506351+01:00;</History>
+    <LastFailureDetails />
+  </PropertyGroup>
+</Project>

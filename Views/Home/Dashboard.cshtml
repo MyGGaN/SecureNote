@@ -1,0 +1,103 @@
+﻿<section class="section overflow-hidden">
+    <a id="login"></a>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 pr-lg-5">
+                <h2 class="section-title" data-aos="fade-up" data-aos-delay="200">Welcome @ViewBag.User.Username!</h2>
+                <h3 class="section-title" data-aos="fade-up" data-aos-delay="200">Create a secure note</h3>
+                <form action="/Home/NewNote" method="post">
+                    <div class="mb-3">
+                        <label for="Title" class="form-label">Title</label>
+                        <input type="text" autocomplete="off" class="form-control shadow rounded" name="Title" id="Title">
+                    </div>
+                    <div class="mb-3">
+                        <label for="Content" class="form-label">Content</label>
+                        <input type="text" autocomplete="off" class="form-control shadow rounded" id="Content" name="Content">
+                    </div>
+                    <div class="mb-3">
+                        <label for="IsPublic" class="form-label">Make this note public</label>
+                        <input type="checkbox" data-val="true" id="IsPublic" name="IsPublic" value="true">
+                    </div>
+                    <input name="IsPublic" type="hidden" value="false" />
+                    <input type="submit" class="btn btn-primary" value="Save" />
+                </form>
+                <div id="form_register_error" class="alert alert-danger" role="alert" style="display: none;"></div>
+            </div>
+            <div class="col-md-6 pl-lg-5">
+                <img src="/images/integration-4.png" class="img-fluid" alt="dashboard" data-aos="fade-left" data-aos-delay="200">
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="position-relative" style="padding-bottom: 20px;">
+    <div class="container">
+        <h3 class="section-title" data-aos="fade-up" data-aos-delay="250">Your secure notes</h3>
+        <div class="row">
+            @if (ViewBag.Notes.Count == 0)
+            {
+                <p>You have no notes</p>
+            }
+            @foreach (var note in ViewBag.Notes)
+            {
+                <div class="col-lg-3 col-sm-6 mb-4 mb-lg-0" data-aos="fade-right" data-aos-duration="1000" data-aos-delay="00">
+                    <div class="card border-0 shadow rounded-xs pt-5">
+                        <div class="card-body">
+                            <h4 class="mt-4 mb-3">@note.Title</h4>
+                            <form name="noteUpdate" action="api/Note/@note.Id" method="post">
+                                <div class="mb-3">
+                                    <label for="Title" class="form-label">Title</label>
+                                    <input type="text" autocomplete="off" class="form-control shadow rounded" name="Title" id="Title" value="@note.Title">
+                                </div>
+                                <div class="mb-3">
+                                    <label for="Content" class="form-label">Content</label>
+                                    <input type="text" autocomplete="off" class="form-control shadow rounded" id="Content" name="Content" value="@note.Content">
+                                </div>
+                                @if (note.IsPublic)
+                                {
+                                    <p>Note is public <input type="checkbox" data-val="true" id="IsPublic" name="IsPublic" value="true" checked="checked"></p>
+                                }
+                                else
+                                {
+                                    <p>Note is public <input type="checkbox" data-val="true" id="IsPublic" name="IsPublic" value="true"></p>
+                                }
+                                <input name="IsPublic" type="hidden" value="false">
+                                <input name="Id" type="hidden" value="@note.Id">
+                                <input name="UserId" type="hidden" value="@note.UserId">
+                                <p><input type="submit" class="btn btn-primary" value="Update" /></p>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+    <img src="/images/dot-1.png" class="img-fluid feature-bg-shape-1" alt="background-dots">
+    <img src="/images/shape-bg.png" class="img-fluid feature-bg-shape-2" alt="background-shape">
+</section>
+
+
+<section class="position-relative" style="padding-bottom: 20px;">
+    <div class="container">
+        <h3 class="section-title" data-aos="fade-up" data-aos-delay="250">Public notes</h3>
+        <div class="row">
+            @if (ViewBag.PublicNotes.Count == 0)
+            {
+                <p>There are no public notes</p>
+            }
+            @foreach (var note in ViewBag.PublicNotes)
+            {
+                <div class="col-lg-3 col-sm-6 mb-4 mb-lg-0" data-aos="fade-right" data-aos-duration="1000" data-aos-delay="00">
+                    <div class="card border-0 shadow rounded-xs pt-5">
+                        <div class="card-body">
+                            <h4 class="mt-4 mb-3">@note.Title</h4>
+                            <p>@note.Content</p>
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+    <img src="/images/dot-1.png" class="img-fluid feature-bg-shape-1" alt="background-dots">
+    <img src="/images/shape-bg.png" class="img-fluid feature-bg-shape-2" alt="background-shape">
+</section>
